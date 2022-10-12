@@ -10,16 +10,27 @@ let highscoreHTML = document.querySelector(".highscore");
 
 let secret = Math.trunc(Math.random() * 20 + 1); 
 let score = 20;
-;
+let storedGuess = 0;
+
+
 check.addEventListener('click', () =>{
     let guess = Number(guess_num.value);
-    let highscore = Number(highscoreHTML.innerHTML)
-    
+    let highscore = Number(highscoreHTML.innerHTML);
+    if(score!==1){
     if(guess !== secret){
+        if(guess<0 || guess>20){
+            message.innerHTML = "Out of Range";
+        }else if(guess === storedGuess){
+            message.innerHTML = "Same Number";
+        }
+        else{
         (guess<secret) ? message.innerHTML = "⬇ Too low":message.innerHTML = "⬆ Too high";
         score -= 1;
         scoreHTML.innerHTML = score;
+        storedGuess = guess;
+        }
     }
+    
 //When the secret number matches
     if(guess == secret){
         message.innerHTML = "😍 Congrats";
@@ -32,8 +43,16 @@ check.addEventListener('click', () =>{
             highscoreHTML.innerHTML = score;
         }
         check.classList.toggle("hidden");
-
+        
     }
+// Game over 
+} else {
+ 
+    scoreHTML.innerHTML = 0;
+    message.innerHTML = "Game Over";
+    body.style.backgroundColor = "#A30000"
+
+}
 //start the game again
     play_again.addEventListener('click', () =>{
         secret =  Math.trunc(Math.random() * 20 + 1);
