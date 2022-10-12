@@ -27,17 +27,17 @@
   main {
     height: 65vh;
     color: #eee;
-    display: flex;
+    
     align-items: center;
     justify-content: space-around;
   }
   
-  .left {
+  /* .left {
     width: 52rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+  } 
   
   .right {
     width: 52rem;
@@ -46,7 +46,7 @@
   
   /* ELEMENTS STYLE */
   h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     text-align: center;
     position: absolute;
     width: 100%;
@@ -73,7 +73,7 @@
     border-radius: 3%;
   }
   
-  .between {
+  /* .between {
     font-size: 3rem;
     position: absolute;
     top: 2rem;
@@ -86,7 +86,7 @@
     top: 2rem;
     left: 2rem;
     font-weight: bolder;
-  }
+  } */
   
   .guess {
     background: none;
@@ -120,13 +120,13 @@
   .message {
     height: 3rem; 
 }
-  .msg{
+  /* .msg{
   margin: 10% 0% ;
   width: 50rem;
   height: 5.5rem;
   border: 5px solid #eee;
   text-align: center;
-  }
+  } */
   .label-score {
     margin-bottom: 2rem;
   }
