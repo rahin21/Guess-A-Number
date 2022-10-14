@@ -20,14 +20,11 @@ check.addEventListener('click', () =>{
     if(guess !== secret){
         if(guess<0 || guess>20){
             message.innerHTML = "Out of Range";
-        }else if(guess === storedGuess){
-            message.innerHTML = "Same Number";
         }
         else{
         (guess<secret) ? message.innerHTML = "⬇ Too low":message.innerHTML = "⬆ Too high";
         score -= 1;
         scoreHTML.innerHTML = score;
-        storedGuess = guess;
         }
     }
     
